@@ -239,6 +239,7 @@ Plugin 'vim-scripts/txt.vim'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'will133/vim-dirdiff'
 Plugin 'mhinz/vim-startify'
+Plugin 'posva/vim-vue'
 
 call vundle#end()            
 filetype plugin indent on    
@@ -401,3 +402,12 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 map <C-g> <C-W>_
+
+" vue html tab
+autocmd FileType vue setlocal shiftwidth=2
+autocmd FileType vue setlocal tabstop=2
+autocmd FileType vue syntax sync fromstart
+
+autocmd BufRead,BufNewFile *.blade.php set filetype=blade
+autocmd FileType blade setlocal shiftwidth=2
+autocmd FileType blade setlocal tabstop=2
