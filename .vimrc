@@ -14,13 +14,14 @@
 " 通用设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 定义快捷键的前缀，即<Leader>
-let mapleader = ","
+let mapleader = ";"
 " 开启文件类型侦测
 filetype on
 " 根据侦测到的不同类型加载对应的插件
 filetype plugin on
 " 不让vim发出讨厌的滴滴声
 set noerrorbells
+set term=xterm-256color
 " 不要使用vi的键盘模式，使用vim自己的
 set nocompatible
 " 去掉输入错误的提示
@@ -44,7 +45,7 @@ set t_Co=256
 " 命令行显示输入的命令
 set showcmd         
 " 命令行的高度
-set cmdheight=2
+set cmdheight=1
 " 命令行显示vim当前模式
 set showmode
 " 总是显示状态栏
@@ -107,7 +108,7 @@ set smarttab
 " 历史文件中需要记录的行数
 set history=1000
 " 禁止折行
-set nowrap
+"set nowrap
 " 使用回格键正常处理indent,eol,start等
 set backspace=2
 
@@ -130,7 +131,7 @@ set magic
 " set foldmethod=indent
 set foldmethod=syntax
 " 启动vim时关闭折叠代码
-set nofoldenable
+"set nofoldenable
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 代码补全
@@ -226,8 +227,6 @@ Plugin 'tpope/vim-endwise'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'vim-scripts/txt.vim'
@@ -242,6 +241,9 @@ filetype plugin indent on
 " load vim default plugin
 runtime macros/matchit.vim
 
+" Map sapce to / (search)
+map <space> /
+
 " change-colorscheme
 map <F10> :NextColorScheme<CR>
 imap <F10> <ESC> :NextColorScheme<CR>
@@ -249,10 +251,15 @@ map <F9> :PreviousColorScheme<CR>
 imap <F9> <ESC> :PreviousColorScheme<CR>
 
 " nerdtree
-map <F3> :NERDTreeToggle<CR>
-imap <F3> <ESC> :NERDTreeToggle<CR>
+let g:NERDChristmasTree = 1
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDShowBookMarks = 1
+let g:NERDTreeIgnore = ['\.pyc$']
+map <F2> :NERDTreeToggle<CR>
+imap <F2> <ESC> :NERDTreeToggle<CR>
 "autocmd vimenter * if !argc() | NERDTree | endif
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Doxygen
 let g:DoxygenToolkit_authorName="chxuan, 787280310@qq.com"
@@ -299,13 +306,13 @@ let g:ycm_semantic_triggers =  {
 let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&',']']
 
 " a.vim: .h -> .cpp or .cpp -> .h
-nnoremap <silent> <F2> :A<CR>
+nnoremap <silent> <F4> :A<CR>
 
 " tagbar
 let g:tagbar_ctags_bin = '/usr/bin/ctags'
 let g:tagbar_width = 30
-map <F4> :TagbarToggle<CR>
-imap <F4> <ESC> :TagbarToggle<CR>
+map <F3> :TagbarToggle<CR>
+imap <F3> <ESC> :TagbarToggle<CR>
 
 " colorscheme
 set background=dark
@@ -338,13 +345,13 @@ nnoremap <C-N> :bn<CR>
 nnoremap <C-P> :bp<CR>
 
 " ctrlp
-let g:ctrlp_map = '<c-f>'
+let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = ':CtrlP'
 let g:ctrlp_working_path_mode = '0'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 " vim-devicons
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
+" set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
 
 " incsearch.vim
 map /  <Plug>(incsearch-forward)
@@ -360,16 +367,16 @@ imap <silent> <F8> <Plug>StopMarkdownPreview
 
 " vim-easymotion
 let g:EasyMotion_smartcase = 1
-map <Leader><Leader>j <Plug>(easymotion-j)
-map <Leader><Leader>k <Plug>(easymotion-k)
-map <Leader><Leader>h <Plug>(easymotion-linebackward)
-map <Leader><Leader>l <Plug>(easymotion-lineforward)
-map <Leader><Leader>. <Plug>(easymotion-repeat)
-" <Leader>f{char} to move to {char}
-map <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-" s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>. <Plug>(easymotion-repeat)
+" <Leader>s{char} to move to {char}
+map <Leader>s <Plug>(easymotion-bd-f)
+nmap <Leader>s <Plug>(easymotion-overwin-f)
+" <Leader>f{char}{char} to move to {char}{char}
+nmap <Leader>f <Plug>(easymotion-overwin-f2)
 " Move to line
 map <Leader>L <Plug>(easymotion-bd-jk)
 nmap <Leader>L <Plug>(easymotion-overwin-line)
@@ -384,3 +391,10 @@ nmap <Leader><Leader>il :IndentLinesToggle<CR>
 " pydiction
 let g:pydiction_location='~/.vim/bundle/pydiction/complete-dict'
 let g:pydiction_menu_height=10
+
+" key
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+map <C-g> <C-W>_
