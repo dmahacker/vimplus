@@ -43,6 +43,8 @@ syntax enable
 syntax on
 " 开启256色支持，默认是8色
 set t_Co=256
+" 总是显示Tab栏
+set showtabline=2
 " 命令行显示输入的命令
 set showcmd         
 " 命令行的高度
