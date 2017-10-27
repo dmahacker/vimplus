@@ -59,7 +59,7 @@ and some plugins below:
 ### Centos x64 Installation
 
 ```bash
-git clone https://github.com/chxuan/vimplus.git
+git clone git@github.com:dmahacker/vimplus.git
 cd ./vimplus
 sudo ./install.sh
 ```
