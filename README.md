@@ -17,7 +17,7 @@ Installation
 ### Ubuntu x64 Installation(Supported Ubuntu 16.04 LTS)
 
 ```bash
-git clone https://github.com/chxuan/vimplus.git
+git clone git@github.com:dmahacker/vimplus.git
 cd ./vimplus
 sudo ./install.sh
 ```
