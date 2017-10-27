@@ -29,6 +29,7 @@ set noeb
 " 告诉我们文件的哪一行被改变过
 set report=0
 " 可以在buffer的任何地方使用鼠标
+set term=xterm-256color
 set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
@@ -230,7 +231,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'vim-scripts/txt.vim'
-Plugin 'ryanoasis/vim-devicons'
+" Plugin 'ryanoasis/vim-devicons'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'will133/vim-dirdiff'
 Plugin 'mhinz/vim-startify'
