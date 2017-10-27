@@ -133,8 +133,8 @@ set magic
 " 基于缩进或语法进行代码折叠
 " set foldmethod=indent
 set foldmethod=syntax
-" 启动vim时关闭折叠代码
-"set nofoldenable
+" 支持php折叠
+let php_folding = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 代码补全
