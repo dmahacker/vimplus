@@ -323,8 +323,7 @@ imap <F3> <ESC> :TagbarToggle<CR>
 " colorscheme
 set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
-"colorscheme monokai
+colorscheme monokai
 
 " cpp_class_scope_highlight
 let g:cpp_class_scope_highlight = 1
@@ -332,7 +331,7 @@ let g:cpp_experimental_template_highlight = 1
 let c_no_curly_error = 1
 
 " airline
-let g:airline_theme="luna"
+let g:airline_theme="laederon"
 " let g:airline_theme="badwolf"
 let g:airline_powerline_fonts = 1
 "let g:airline_section_b = '%{strftime("%c")}'
