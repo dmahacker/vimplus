@@ -31,7 +31,6 @@ set report=0
 " 可以在buffer的任何地方使用鼠标
 set term=xterm-256color
 set mouse=a
-set selection=exclusive
 set selectmode=mouse,key
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
