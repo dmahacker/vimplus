@@ -439,3 +439,7 @@ inoremap <expr> <plug>completes_me_backward <sid>completes_me(1)
 
 imap <Tab>   <plug>completes_me_forward
 imap <S-Tab> <plug>completes_me_backward
+
+"bash
+map <F5> :!bash<CR>
+imap <F5> <ESC> :!bash<CR>
