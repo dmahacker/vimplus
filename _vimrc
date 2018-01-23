@@ -183,6 +183,7 @@ filetype off
 set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
 call vundle#begin()
 " vundle 管理的插件列表必须位于vundle#begin()和vundle#end()之间
+Plugin 'wimproved.vim'
 Plugin 'AutoComplPop'
 Plugin 'chemzqm/wxapp.vim'
 Plugin 'VundleVim/Vundle.vim'
@@ -403,7 +404,6 @@ autocmd FileType wxss setlocal tabstop=2
 autocmd FileType wxss set dictionary=$VIM/vimfiles/dict/wxss.dict
 
 set guifont=DejaVu_Sans_Mono_for_Powerline:h11
-autocmd GUIEnter * simalt ~x
 
 " Tab补全
 if exists('did_completes_me_loaded') || v:version < 700
@@ -443,3 +443,8 @@ imap <S-Tab> <plug>completes_me_backward
 "bash
 map <F5> :!bash<CR>
 imap <F5> <ESC> :!bash<CR>
+
+"fullscreen
+map <F11> :WToggleFullscreen<CR>
+imap <F11> <ESC> :WToggleFullscreen<CR>
+autocmd GUIEnter * :WToggleFullscreen
