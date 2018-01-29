@@ -404,8 +404,8 @@ map <C-l> <C-W>l
 map <C-g> <C-W>_
 
 " vue html tab
-autocmd FileType vue setlocal shiftwidth=2
-autocmd FileType vue setlocal tabstop=2
+autocmd FileType vue,javascript setlocal shiftwidth=2
+autocmd FileType vue,javascript setlocal tabstop=2
 autocmd FileType vue syntax sync fromstart
 
 autocmd BufRead,BufNewFile *.blade.php set filetype=blade
