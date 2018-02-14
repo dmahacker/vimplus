@@ -411,3 +411,6 @@ autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.blade.php set filetype=blade
 autocmd FileType blade setlocal shiftwidth=2
 autocmd FileType blade setlocal tabstop=2
+
+" transparent
+hi Normal guibg=NONE ctermbg=NONE
