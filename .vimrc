@@ -21,7 +21,6 @@ filetype on
 filetype plugin on
 " 不让vim发出讨厌的滴滴声
 set noerrorbells
-set term=xterm-256color
 " 不要使用vi的键盘模式，使用vim自己的
 set nocompatible
 " 去掉输入错误的提示
@@ -29,7 +28,6 @@ set noeb
 " 告诉我们文件的哪一行被改变过
 set report=0
 " 可以在buffer的任何地方使用鼠标
-set term=xterm-256color
 set mouse=a
 set selectmode=mouse,key
 
@@ -411,6 +409,3 @@ autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.blade.php set filetype=blade
 autocmd FileType blade setlocal shiftwidth=2
 autocmd FileType blade setlocal tabstop=2
-
-" transparent
-hi Normal guibg=NONE ctermbg=NONE
